@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Selector de Carpetas</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Comic Sans MS, cursive;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #222;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    li:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selecciona una carpeta</h1>
+  <ul id="folder-list">
+    <!-- Las carpetas se listarán aquí -->
+  </ul>
+
+  <script>
+    // Lista de carpetas manualmente agregadas (GitHub Pages no permite leer el filesystem)
+    const folders = [
+      'Friday Night Funkin'',
+      // Agrega aquí más nombres de carpetas de tu repo
+    ];
+
+    const folderList = document.getElementById('folder-list');
+
+    folders.forEach(folder => {
+      const li = document.createElement('li');
+      li.textContent = folder;
+      li.onclick = () => {
+        // Redirige a la carpeta (esperando que tenga index.html)
+        window.location.href = folder + '/';
+      };
+      folderList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
